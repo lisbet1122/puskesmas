@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-title class="ion-text-center">
+      Sistem Informasi Puskesmas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card class="ion-padding" style="border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+    <ion-grid>
+      <ion-row class="ion-align-items-center ion-justify-content-center">
+
+        <!-- Logo kiri -->
+        <ion-col size="12" sizeMd="3" class="ion-text-center">
+          <img src="assets/kk.jpeg" alt="Logo Kiri"
+            style="width: 100px; border-radius: 50%; border: 2px solid #28a745;" />
+        </ion-col>
+
+        <!-- Informasi Puskesmas -->
+        <ion-col size="12" sizeMd="6" class="ion-text-center">
+          <h2 style="margin: 0; color: #2E7D32;">Puskesmas Perdagangan</h2>
+          <ion-text color="medium">
+            <p style="font-size: 14px;">
+              Sei Mangkei, Kec. Bosar Maligas<br>
+              Kabupaten Simalungun, Sumatera Utara<br>
+              Kode Pos: 21184
+            </p>
+          </ion-text>
+        </ion-col>
+
+        <!-- Logo kanan -->
+        <ion-col size="12" sizeMd="3" class="ion-text-center">
+          <img src="assets/jj.png" alt="Logo Kanan"
+            style="width: 100px; border-radius: 50%; border: 2px solid #28a745;" />
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <!-- Tambahan Konten Jika Mau -->
+  <ion-card class="ion-padding" color="light" style="margin-top: 20px; border-radius: 12px;">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Selamat Datang di Sistem Pendaftaran</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="ion-text-center">
+      Silakan gunakan menu di bawah untuk melakukan pendaftaran atau melihat data pasien.
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

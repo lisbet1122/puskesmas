@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Form Pendaftaran</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="light">
+
+
+
+  <!-- Card Form -->
+  <ion-card class="ion-padding" style="border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-top: 16px;">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center" style="color: #2e7d32;">
+        📋 Pendaftaran Pasien
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-text color="medium">
+        <p class="ion-text-center">Silakan isi formulir berikut untuk melakukan pendaftaran ke Puskesmas.</p>
+      </ion-text>
+
+      <ion-list lines="inset">
+        <ion-item>
+          <ion-icon slot="start" name="person-outline" color="success"></ion-icon>
+          <ion-label position="floating">Nama Lengkap</ion-label>
+          <ion-input type="text" [(ngModel)]="nama"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon slot="start" name="call-outline" color="success"></ion-icon>
+          <ion-label position="floating">Nomor HP/WA</ion-label>
+          <ion-input type="tel" [(ngModel)]="nohp"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon slot="start" name="mail-outline" color="success"></ion-icon>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon slot="start" name="calendar-outline" color="success"></ion-icon>
+          <ion-label position="floating">Tanggal</ion-label>
+          <ion-input type="date" [(ngModel)]="tanggal"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon slot="start" name="people-outline" color="success"></ion-icon>
+          <ion-label position="floating">Status</ion-label>
+          <ion-select [(ngModel)]="status" placeholder="Pilih status">
+            <ion-select-option value="Umum">Umum</ion-select-option>
+            <ion-select-option value="BPJS">BPJS</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon slot="start" name="medkit-outline" color="success"></ion-icon>
+          <ion-label position="floating">Poli</ion-label>
+          <ion-select [(ngModel)]="poli" placeholder="Pilih poli">
+            <ion-select-option value="Poli Umum">Poli Umum</ion-select-option>
+            <ion-select-option value="Poli Kesehatan Ibu & Anak">Poli Kesehatan Ibu & Anak</ion-select-option>
+            <ion-select-option value="Poli Gigi">Poli Gigi</ion-select-option>
+            <ion-select-option value="Poli Lansia">Poli Lansia</ion-select-option>
+            <ion-select-option value="Poli Penyakit Tidak Menular">Poli Penyakit Tidak Menular</ion-select-option>
+            <ion-select-option value="Poli Gizi">Poli Gizi</ion-select-option>
+            <ion-select-option value="Poli KB">Poli KB</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon slot="start" name="document-text-outline" color="success"></ion-icon>
+          <ion-label position="floating">Keterangan</ion-label>
+          <ion-textarea [(ngModel)]="keterangan"></ion-textarea>
+        </ion-item>
+      </ion-list>
+
+      <div class="ion-margin-top">
+        <ion-button expand="block" color="success" (click)="addRegister()">
+          <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
+          Daftar Sekarang
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

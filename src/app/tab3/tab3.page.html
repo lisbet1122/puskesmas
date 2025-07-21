@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar style="--background: #4CAF50;">
+    <ion-title class="ion-text-center" style="color: white;">Admin Puskesmas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="light">
+
+  <!-- FORM LOGIN -->
+  <div *ngIf="tabState === 'login'" class="ion-text-center">
+    <h2 class="ion-margin-top" style="font-weight: bold; color: #4CAF50;">Login Admin</h2>
+    <p style="color: #666;">Akses Panel Admin Pendaftaran</p>
+
+    <ion-card
+      style="width: 90%; max-width: 350px; margin: auto; margin-top: 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+      <ion-card-content>
+
+        <ion-item lines="inset">
+          <ion-icon name="person-outline" slot="start" color="success"></ion-icon>
+          <ion-input placeholder="Username" [(ngModel)]="username"></ion-input>
+        </ion-item>
+
+        <ion-item lines="inset">
+          <ion-icon name="lock-closed-outline" slot="start" color="success"></ion-icon>
+          <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" color="success" class="ion-margin-top" (click)="login()">
+          Masuk
+        </ion-button>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <!-- KONTEN ADMIN -->
+  <div *ngIf="tabState === 'admin'">
+    <h2 class="ion-text-center ion-margin-top" style="color: #4CAF50;">📋 Data Pendaftaran</h2>
+
+    <ion-list *ngIf="daftarPendaftaran.length > 0; else tidakAdaData">
+      <ion-card *ngFor="let p of daftarPendaftaran" class="ion-margin-bottom"
+        style="border-left: 6px solid #4CAF50; border-radius: 10px;">
+        <ion-card-content>
+          <h3 style="margin-bottom: 6px; font-weight: bold;">👤 {{ p.nama }}</h3>
+          <p><strong>📞:</strong> {{ p.nohp }}</p>
+          <p><strong>✉️:</strong> {{ p.email }}</p>
+          <p><strong>📅:</strong> {{ p.tanggal }}</p>
+          <p><strong>🏥:</strong> {{ p.poli }}</p>
+          <p><strong>💬:</strong> {{ p.keterangan }}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+    <ng-template #tidakAdaData>
+      <ion-text color="medium">
+        <p class="ion-text-center">Belum ada pendaftaran yang masuk.</p>
+      </ion-text>
+    </ng-template>
+
+    <ion-button expand="block" color="medium" (click)="logout()" style="margin-top: 15px;">
+      🚪 Keluar Admin
+    </ion-button>
+  </div>
+
+</ion-content>

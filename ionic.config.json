@@ -1,0 +1,7 @@
+{
+  "name": "Puskesmas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
